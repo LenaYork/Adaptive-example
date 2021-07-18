@@ -1,13 +1,14 @@
+
 .container {
     height: 100vh;
     width: 100vw;
     background-color: red;
     display: grid;
-    grid-template-areas: "header header header"
+    /* grid-template-areas: "header header header"
                         "main main aside"
                         "footer footer footer";
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 15% 1fr 15%;
+    grid-template-rows: 15% 1fr 15%; */
 }
 
 .header {
@@ -19,11 +20,11 @@
     background-color: #fff8e3;
     grid-area: main;
     display: grid;
-    grid-template-areas: "main-text main-text"
+    /* grid-template-areas: "main-text main-text"
                         "main-one main-two"
                         "main-three main-three";
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 3fr 1fr 1fr;
+    grid-template-rows: 3fr 1fr 1fr; */
     padding: 0 25px;
     grid-gap: 15px;
 }
@@ -57,11 +58,11 @@
     background-color: #e0e0e0;
     grid-area: footer;
     display: grid;
-    grid-template-areas: "footer-one footer-two footer-three footer-four";
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /* grid-template-areas: "footer-one footer-two footer-three footer-four";
+    grid-template-columns: 1fr 1fr 1fr 1fr; */
     justify-content: space-around;
     grid-gap: 15px;
-    padding: 0 15px;
+    /* padding: 0 15px; */
 }
 
 .footer-item {
@@ -90,4 +91,97 @@ h2 {
 
 .header, .main, .aside, .footer {
     align-items: center;
+}
+
+@media (min-width: 880px) {
+    .container {
+        grid-template-areas: "header header header"
+                            "main main aside"
+                            "footer footer footer";
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 15% 1fr 15%;
+    }
+
+    .main {
+        grid-template-areas: "main-text main-text"
+                            "main-one main-two"
+                            "main-three main-three";
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 3fr 1fr 1fr;}
+
+    .footer {
+        grid-template-areas: "footer-one footer-two footer-three footer-four";
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        padding: 0 15px;
+    }
+}
+
+@media (min-width: 701px) and (max-width: 889px) {
+    .container {
+        grid-template-areas: "header header"
+                            "main aside"
+                            "footer footer"
+                            "footer footer";
+        grid-template-columns: 1.2fr 0.8fr ;
+        grid-template-rows: 15% 1fr 15% 15%;
+    }
+
+    .main {
+        grid-template-areas: "main-text"
+                            "main-one"
+                            "main-two"
+                            "main-three";
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
+
+    .footer {
+        grid-template-areas: "footer-one footer-two" 
+                            "footer-three footer-four";
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows:  1fr 1fr;
+        padding: 20px 15px;
+    }
+}
+
+@media (max-width: 700px) {
+    .container {
+        grid-template-areas: "header"
+                            "main"
+                            "aside"
+                            "footer"
+                            "footer"
+                            "footer"
+                            "footer";
+        grid-template-rows: 10% 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+
+    .main {
+        grid-template-areas: "main-text"
+                            "main-one"
+                            "main-two"
+                            "main-three";
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
+
+    .main-item-three {
+        margin-bottom: 10px;
+    }
+
+    .footer {
+        grid-template-areas: "footer-one"
+                            "footer-two" 
+                            "footer-three" 
+                            "footer-four";
+        grid-template-columns: 1fr;
+        grid-template-rows:  1fr 1fr 1fr 1fr;
+        /* padding: 20px 15px; */
+        padding: 0 25px;
+    }
+
+    h2 {
+        /* font-size: smaller; */
+        margin: 15px;
+    }
 }
